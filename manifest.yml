@@ -1,0 +1,19 @@
+declared-services:
+  weatherinsights-service:
+    label: weatherinsights
+    plan: Free-v2
+  conversation-service:
+    label: conversation
+    plan: free
+  cloudantNoSQLDB-service:
+    label: cloudantNoSQLDB
+    plan: Lite
+applications:
+- services:
+   - conversation-service
+   - cloudantNoSQLDB-service
+   - weatherinsights-service
+  name: dev
+  command: npm start
+  path: .
+  memory: 512M
